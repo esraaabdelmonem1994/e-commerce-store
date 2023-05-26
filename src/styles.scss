@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+
+$error-color: #DC3545;
+$success-color: #28a745;
+
+html, body { height: 100vh; }
+body { 
+	margin: 0; 
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.block-display{
+	display: block !important;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.invalid-data{
+	color: $error-color;
+}
+
+.mt-10{
+	margin-top: 10px !important;
+}
+
+.mb-10{
+	margin-bottom: 10px;
+}
+
+// .success-snackbar { //Need to check this again
+// 	background-color: #FFF !important;
+// 	border-color: $success-color !important;
+// 	color: $success-color !important;
+// }
+
+// .error-snackbar {
+// 	background-color: #FFF !important;
+// 	border-color: $error-color !important;
+// 	color: $error-color !important;
+// }
+
+@media (max-width: 767px) {
+	// .page-inner {
+	// 	overflow: auto;
+	// }
+}
+	 

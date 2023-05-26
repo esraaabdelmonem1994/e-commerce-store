@@ -1,0 +1,46 @@
+<div class="blank-cover-bg"></div>
+
+<mat-card class="login">
+	<mat-card-title class="mt-10">{{'Login' | translate}}</mat-card-title>
+
+	<mat-card-content>
+		<form (ngSubmit)="login(frm)" name="form" #frm="ngForm" novalidate>
+			<p>
+				<mat-form-field appearance="outline">
+					<input matInput type="text" placeholder="{{'Username' | translate}}" name="username"
+						[(ngModel)]="credential.username" #username="ngModel" required>
+					<mat-icon matSuffix
+						[ngClass]="{'invalid-data': frm.submitted && username.invalid }">account_circle</mat-icon>
+					<mat-hint *ngIf="frm.submitted && username.errors?.['required']"
+						[ngClass]="{'invalid-data': frm.submitted && username.invalid }">{{'RequiredField' |
+						translate}}</mat-hint>
+				</mat-form-field>
+			</p>
+
+			<p>
+				<mat-form-field appearance="outline">
+					<input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="{{'Password' | translate}}"
+						name="password" [(ngModel)]="credential.password" #password="ngModel" required>
+					<button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+						[attr.aria-label]="'HidePassword' | translate" [attr.aria-pressed]="hidePassword">
+						<mat-icon [ngClass]="{'invalid-data': frm.submitted && password.invalid }">{{hidePassword ?
+							'visibility_off' : 'visibility'}}</mat-icon>
+					</button>
+					<mat-hint *ngIf="frm.submitted && password.errors?.['required']"
+						[ngClass]="{'invalid-data': frm.submitted && password.invalid }">{{'RequiredField' |
+						translate}}</mat-hint>
+				</mat-form-field>
+			</p>
+
+			<div class="text-center mb-10">
+				<button type="submit" mat-stroked-button color="primary">{{'Login' | translate}}</button>
+			</div>
+
+			<div class="text-center">
+				<a href="javascript:;" (click)="changeLanguage('ar')">عربى</a> |
+				<a href="javascript:;" (click)="changeLanguage('en')">English</a>
+			</div>
+
+		</form>
+	</mat-card-content>
+</mat-card>

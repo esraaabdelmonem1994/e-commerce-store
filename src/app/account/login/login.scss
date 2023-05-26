@@ -1,0 +1,40 @@
+:host{
+  display: flex;
+  justify-content: center;
+}
+
+.blank-cover-bg {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url(../../../assets/images/body-back.jpg) #FFF;
+  background-size: 100% 100%;
+  opacity: 0.8;
+}
+
+.login {
+  position: absolute;
+  margin: 100px 0px;
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 767px) {
+  mat-card {
+   width: 100vw;
+   height: 100vh;
+   margin: 0px 0px !important;
+   justify-content: center;
+  }
+}
+      

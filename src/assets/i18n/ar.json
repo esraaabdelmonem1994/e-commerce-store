@@ -1,0 +1,27 @@
+{
+	"dir": "rtl",
+	"LeftRightPosition": "right",
+	"Login":"تسجيل الدخول",
+	"Username":"اسم المستخدم",
+	"Password":"كلمه المرور",
+	"HidePassword": "اخفاء كلمة المرور",
+	"RequiredField": "هذه الخانة مطلوبة",
+	"InvalidCredential": "يوجد خطأ فى اسم المستخدم او كلمة المرور",
+	"InvalidFormMsg": "بعض البيانات مفقودة أو غير صحيحة",
+	"InvalidPermissionMsg": "ليس لديك إذن للوصول إلى هذه الصفحة",
+	"Image": "الصورة",
+	"Title": "اسم المنتج",
+	"Category": "التصنيف",
+	"Price": "السعر",
+	"AddProduct": "اضافة منتج",
+	"Edit": "تعديل",
+	"Delete": "حذف",
+	"EditProduct":"تعديل منتج",
+	"Save": "حفظ",
+	"Cancel": "الغاء",
+	"Description": "وصف المنتج",
+	"logOut": "خروج",
+	"SearchMsg": "اكتب للبحث",
+	"RatingCount": "معدل"
+
+}

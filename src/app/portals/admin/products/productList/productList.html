@@ -1,0 +1,52 @@
+<div class="product-box" *ngIf="dataList.length > 0">
+	<div class="mat-elevation-z8">
+		<table mat-table [dataSource]="dataSource">
+			<ng-container matColumnDef="image">
+				<th mat-header-cell *matHeaderCellDef> {{'Image' | translate}} </th>
+				<td mat-cell *matCellDef="let element">
+					<img class="image" onError="this.src='assets/images/default.png';"
+						[src]="element.image || 'assets/images/default.png'" />
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="category">
+				<th mat-header-cell *matHeaderCellDef> {{'Category' | translate}}</th>
+				<td mat-cell *matCellDef="let element"> {{element.category}} </td>
+			</ng-container>
+
+			<ng-container matColumnDef="title">
+				<th mat-header-cell *matHeaderCellDef> {{'Title' | translate}}</th>
+				<td mat-cell *matCellDef="let element"> {{element.title}} </td>
+			</ng-container>
+
+			<ng-container matColumnDef="price">
+				<th mat-header-cell *matHeaderCellDef> {{'Price' | translate}} </th>
+				<td mat-cell *matCellDef="let element"> {{'$' + element.price}} </td>
+			</ng-container>
+
+			<ng-container matColumnDef="buttons">
+				<th mat-header-cell *matHeaderCellDef>
+					<button mat-stroked-button color="primary" aria-label="Add" type="button"
+						(click)="openProductAddEditPopup({id:null})">
+						{{'AddProduct' | translate}}
+					</button>
+				</th>
+				<td mat-cell *matCellDef="let element">
+					<button mat-mini-fab color="primary" aria-label="Edit" type="button" title="{{'Edit' | translate}}"
+						(click)="openProductAddEditPopup(element)">
+						<mat-icon>edit</mat-icon>
+					</button>&nbsp;
+
+					<button mat-mini-fab color="warn" aria-label="Delete" type="button" title="{{'Delete' | translate}}" (click)="delete(element)">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+		</table>
+
+		<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+	</div>
+</div>
